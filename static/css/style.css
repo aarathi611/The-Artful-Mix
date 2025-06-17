@@ -1,3 +1,10 @@
+body {
+    background-color: #e3d1f3; /* light lilac example — change to any color you want */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Optional: makes text a bit cleaner */
+}
+
 .category-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);  /* 3 boxes per row */
@@ -10,7 +17,7 @@
 .category-button {
     width: 200px;
     height: 100px;
-    background-color: #e3d1f3;
+    background-color: #fcfcfc;
     color: #680397;
     text-decoration: none;
     border-radius: 15px;
