@@ -1,0 +1,56 @@
+.category-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 boxes per row */
+    gap: 30px 80px;
+    justify-items: center;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.category-button {
+    width: 200px;
+    height: 100px;
+    background-color: #e3d1f3;
+    color: #680397;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.category-button:hover {
+    background-color: #e3d1f3;
+    color: #4a026e;
+    transform: scale(1.05);
+}
+
+
+h2 {
+    margin-bottom: 100px; /* adds more space below "Explore by Category" */
+}
+
+h1, h2 {
+    text-align: center;
+    color: black; /* Optional: change if needed */
+}
+
+.profile-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #680397;
+    object-fit: cover;
+    object-position: center 30%;
+}
