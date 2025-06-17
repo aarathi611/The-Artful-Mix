@@ -10,12 +10,13 @@ body {
 
 .category-links {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);  /* 3 boxes per row */
-    row-gap: 80px;        /* MORE vertical space between rows */
-    column-gap: 100px;    /* Optional: increase horizontal space too */
-    justify-content: center;  /* centers the whole grid horizontally */
-    margin: 60px auto;         /* centers it vertically with some spacing */
-    max-width: 1000px;         /* keeps it from stretching too far */
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 60px;           /* was 80px — reduces vertical gap between rows */
+    column-gap: 100px;
+    justify-content: center;
+    margin-top: 30px;        /* was 60px — reduces space above grid */
+    margin-bottom: 40px;     /* optional: controls space below grid */
+    max-width: 1000px;
 }
 
 
@@ -63,10 +64,6 @@ h2 {
 
 .header-text {
     text-align: left;
-}
-
-.profile-container {
-    position: static;  /* change from absolute to static */
 }
 
 .profile-container {
