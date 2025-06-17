@@ -1,32 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>My Art Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Art Portfolio</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <style>
+    /* Hamburger menu styling */
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 22px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 4px;
+      width: 100%;
+      background: #4a026e;
+      border-radius: 2px;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: -250px;
+      top: 0;
+      height: 100%;
+      width: 250px;
+      background-color: #fcfcfc;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      transition: left 0.3s ease;
+      z-index: 999;
+    }
+
+    .sidebar.open {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      margin-bottom: 20px;
+      color: #4a026e;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="top-bar">
-        <div class="header-text">
-            <h1>Welcome to My Art Portfolio</h1>
-            <p class="intro-text">
-                Hi, I am Aarathi Kumaran. I have had various hobbies my whole life and wanted to document them. Take a look at any category you’d like — have fun!
-            </p>
-            
-        </div>
-        <div class="profile-container">
-            <img src="static/images/IMG_5557.jpg" alt="Profile Picture" class="profile-pic">
-        </div>
-    </div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-    <div class="category-links">
-        <a href="crochet.html" class="category-button">Crochet</a>
-        <a href="pottery.html" class="category-button">Pottery</a>
-        <a href="miniatures.html" class="category-button">Miniatures</a>
-        <a href="photography.html" class="category-button">Photography</a>
-        <a href="paintings.html" class="category-button">Paintings</a>
-        <a href="sketches.html" class="category-button">Sketches</a>
+  <div class="sidebar" id="sidebar">
+    <a href="#about">About Me</a>
+    <a href="#music">My Favorite Music / Songs</a>
+    <a href="#hobbies">Hobbies</a>
+  </div>
+
+  <div class="top-bar">
+    <div class="header-text">
+      <h1>Welcome to My Art Portfolio</h1>
+      <h2>Hi, I am Aarathi Kumaran. I have had various hobbies my whole life and wanted to document them. Take a look at any category you’d like — have fun!</h2>
     </div>
+    <div class="profile-container">
+      <img src="static/images/IMG_5557.jpg" alt="Profile Picture" class="profile-pic">
+    </div>
+  </div>
+
+  <div class="category-links" id="hobbies">
+    <a href="crochet.html" class="category-button">Crochet</a>
+    <a href="pottery.html" class="category-button">Pottery</a>
+    <a href="miniatures.html" class="category-button">Miniatures</a>
+    <a href="photography.html" class="category-button">Photography</a>
+    <a href="paintings.html" class="category-button">Paintings</a>
+    <a href="sketches.html" class="category-button">Sketches</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
