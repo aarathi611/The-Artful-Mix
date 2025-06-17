@@ -127,3 +127,63 @@ h2 {
     margin: 10px auto 40px auto;
     line-height: 1.5;
 }
+
+/* Hamburger menu styles */
+.menu-icon {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 28px;
+    color: #4a026e;
+    z-index: 1001;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    padding: 60px 20px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar a {
+    display: block;
+    margin: 20px 0;
+    color: #680397;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Responsive toggle */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+    }
+
+    .header-text {
+        text-align: center;
+    }
+
+    .profile-container {
+        position: static;
+        margin-top: 10px;
+    }
+}
