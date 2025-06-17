@@ -48,10 +48,14 @@ h1 {
     margin-top: 20px;
 }
 
-h2 {
+.intro-message {
     text-align: center;
     color: #4a026e;
-    margin-bottom: 40px;
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 10px auto 40px auto;
+    line-height: 1.5;
+    padding: 0 20px;
 }
 
 .top-bar {
