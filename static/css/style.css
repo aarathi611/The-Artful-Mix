@@ -3,16 +3,21 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif; /* Optional: makes text a bit cleaner */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .category-links {
     display: grid;
     grid-template-columns: repeat(3, 1fr);  /* 3 boxes per row */
-    gap: 30px 80px;
-    justify-items: center;
-    max-width: 900px;
-    margin: 40px auto;
+    row-gap: 80px;        /* MORE vertical space between rows */
+    column-gap: 100px;    /* Optional: increase horizontal space too */
+    justify-content: center;  /* centers the whole grid horizontally */
+    margin: 60px auto;         /* centers it vertically with some spacing */
+    max-width: 1000px;         /* keeps it from stretching too far */
 }
+
 
 .category-button {
     width: 200px;
@@ -37,14 +42,31 @@ body {
     transform: scale(1.05);
 }
 
-
-h2 {
-    margin-bottom: 100px; /* adds more space below "Explore by Category" */
+h1 {
+    text-align: center;
+    color: #4a026e;
+    margin-top: 60px;
 }
 
-h1, h2 {
+h2 {
     text-align: center;
-    color: black; /* Optional: change if needed */
+    color: #4a026e;
+    margin-bottom: 100px;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 60px;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.profile-container {
+    position: static;  /* change from absolute to static */
 }
 
 .profile-container {
@@ -57,7 +79,7 @@ h1, h2 {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 2px solid #680397;
+    border: 2px solid #4a026e;
     object-fit: cover;
     object-position: center 30%;
 }
