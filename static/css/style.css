@@ -39,20 +39,20 @@ body {
 
 .category-button:hover {
     background-color: #e3d1f3;
-    color: #961515;
+    color: #4a026e;
     transform: scale(1.05);
 }
 
 h1 {
     text-align: center;
     color: #4a026e;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 h2 {
     text-align: center;
     color: #4a026e;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 
 .top-bar {
