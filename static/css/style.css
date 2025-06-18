@@ -160,18 +160,20 @@ h1 {
   }
   
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  .gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
     padding: 20px;
-}
+    max-width: 900px;
+    margin: auto;
+  }
 
 .art-image {
     width: 100%;
     height: auto;
+    max-width: 400px;  /* limits how wide it can get */
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     object-fit: cover;
