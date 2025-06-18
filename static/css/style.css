@@ -121,15 +121,15 @@ h1 {
     h1, h2 {
         padding: 0 20px;
     }
-}
 
-.intro-text {
-    text-align: center;
-    color: #4a026e;
-    font-size: 1.1em;
-    max-width: 600px;
-    margin: 10px auto 40px auto;
-    line-height: 1.5;
+    .floating-links a {
+        font-size: 0.85em;
+        padding: 8px 12px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 }
 
 .floating-links {
@@ -140,6 +140,7 @@ h1 {
     flex-direction: column;
     gap: 10px;
     z-index: 999;
+    transition: opacity 0.3s ease;
   }
   
   .floating-links a {
@@ -158,3 +159,20 @@ h1 {
     background-color: #4a026e;
   }
   
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.art-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    object-fit: cover;
+}
