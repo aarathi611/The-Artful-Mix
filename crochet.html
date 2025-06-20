@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="static/css/style.css">
   <style>
-    /* Lightbox modal styles */
     .lightbox {
       display: none;
       position: fixed;
@@ -20,13 +19,11 @@
       align-items: center;
       flex-direction: column;
     }
-
     .lightbox img {
       max-width: 80%;
       max-height: 70vh;
       border-radius: 10px;
     }
-
     .lightbox p {
       color: white;
       margin-top: 20px;
@@ -34,7 +31,6 @@
       text-align: center;
       padding: 0 20px;
     }
-
     .lightbox .close-btn {
       margin-top: 20px;
       background: #fff;
@@ -45,7 +41,6 @@
       cursor: pointer;
       border: none;
     }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -54,14 +49,12 @@
       max-width: 900px;
       margin: auto;
     }
-
     .image-item {
       text-align: center;
     }
-
     .image-caption {
       margin-top: 8px;
-      color: #4a026e;
+      color: #e3d1f3;
       font-weight: bold;
     }
   </style>
@@ -71,24 +64,50 @@
 
   <div class="gallery">
     <div class="image-item">
-      <img src="static/images/crochet/dog_hat.jpg" alt="Dog in Hat" class="art-image" onclick="openLightbox()">
+      <img src="static/images/crochet/au.jpg" alt="au" class="art-image" onclick="openLightbox('au.jpg', 'AU Crochet Item')">
+      <p class="image-caption">AU Crochet Item</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/bag.jpg" alt="Bag" class="art-image" onclick="openLightbox('bag.jpg', 'Crochet Bag')">
+      <p class="image-caption">Crochet Bag</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/Dino.jpg" alt="Dino" class="art-image" onclick="openLightbox('Dino.jpg', 'Crochet Dinosaur')">
+      <p class="image-caption">Crochet Dinosaur</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/dog_hat.jpg" alt="Dog in Hat" class="art-image" onclick="openLightbox('dog_hat.jpg', 'Dog Beanie Hat')">
       <p class="image-caption">Dog Beanie Hat</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/octopus.jpg" alt="Octopus" class="art-image" onclick="openLightbox('octopus.jpg', 'Crochet Octopus')">
+      <p class="image-caption">Crochet Octopus</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/sunflower.jpg" alt="Sunflower" class="art-image" onclick="openLightbox('sunflower.jpg', 'Sunflower Decoration')">
+      <p class="image-caption">Sunflower Decoration</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/miniatures/two.jpg" alt="Miniatures" class="art-image" onclick="openLightbox('miniatures/two.jpg', 'Miniature Crochets')">
+      <p class="image-caption">Miniature Crochets</p>
     </div>
   </div>
 
   <div style="margin-top: 30px; text-align: center;">
-    <a href="index.html" class="category-button">← Back to Home</a>
+    <a href="index.html" class="category-button">&larr; Back to Home</a>
   </div>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
-    <img src="static/images/crochet/dog_hat.jpg" alt="Dog in Hat">
-    <p><strong>Dog Hat</strong><br>Jan 18, 2025 <br> Handmade hat with lots of love</p>
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
     <button class="close-btn" onclick="closeLightbox()">Close</button>
   </div>
 
   <script>
-    function openLightbox() {
+    function openLightbox(image, caption) {
+      document.getElementById('lightbox-img').src = `static/images/crochet/${image}`;
+      document.getElementById('lightbox-caption').innerHTML = `<strong>${caption}</strong>`;
       document.getElementById('lightbox').style.display = 'flex';
     }
 
