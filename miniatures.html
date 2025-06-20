@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Miniatures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/style.css">
+  <style>
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .lightbox img {
+      max-width: 80%;
+      max-height: 70vh;
+      border-radius: 10px;
+    }
+    .lightbox p {
+      color: white;
+      margin-top: 20px;
+      font-size: 1.1em;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .lightbox .close-btn {
+      margin-top: 20px;
+      background: #fff;
+      color: #4a026e;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .image-item {
+      text-align: center;
+    }
+    .image-caption {
+      margin-top: 8px;
+      color: #e3d1f3;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Where Little Meets Lovely</h1>
+
+  <div class="gallery">
+    <div class="image-item">
+      <img src="static/images/miniatures/two.jpg" alt="two" class="art-image" onclick="openLightbox('au.jpg', 'Miniature House')">
+      <p class="image-caption">AU Crochet Item</p>
+    </div>
+
+  <div style="margin-top: 30px; text-align: center;">
+    <a href="index.html" class="category-button">&larr; Back to Home</a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+    <button class="close-btn" onclick="closeLightbox()">Close</button>
+  </div>
+
+  <script>
+    function openLightbox(image, caption) {
+      document.getElementById('lightbox-img').src = `static/images/crochet/${image}`;
+      document.getElementById('lightbox-caption').innerHTML = `<strong>${caption}</strong>`;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
