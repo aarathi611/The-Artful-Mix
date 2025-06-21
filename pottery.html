@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pottery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/style.css">
+  <style>
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .lightbox img {
+      max-width: 80%;
+      max-height: 70vh;
+      border-radius: 10px;
+    }
+    .lightbox p {
+      color: white;
+      margin-top: 20px;
+      font-size: 1.1em;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .lightbox .close-btn {
+      margin-top: 20px;
+      background: #fff;
+      color: #4a026e;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .image-item {
+      text-align: center;
+    }
+    .image-caption {
+      margin-top: 8px;
+      color: #e3d1f3;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Crochet Gallery</h1>
+
+  <div class="gallery">
+    <div class="image-item">
+      <img src="static/images/pottery/elephant.jpg" alt="Elephant" class="art-image" onclick="openLightbox('elephant.jpg', 'Elephant Side Table','<span style=&quot;font-size:0.9em&quot;>This entirely hand-built piece features an elephant design created using the Cuerda Seca technique. <br> Black wax resist outlines were applied by hand. <br> I used a needle bottle to fill each section with glaze, like coloring in a detailed design. <br>  It is one of my longest and most intricate projects. </span>')">
+      <p class="image-caption">Elephant Table</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/pottery/flower.jpg" alt="Flower" class="art-image" onclick="openLightbox('flower.jpg', 'Japanese Flower Vase (Ikebana)','<span style=&quot;font-size:0.9em&quot;>Ikebana is the art of beautifully arranging cut stems, leaves, and flowers in vases and other containers <br> that evolved in Japan over seven centuries.</span>')">
+      <p class="image-caption">Ikebana Flower Vase</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/pottery/tulips.jpg" alt="tulips" class="art-image" onclick="openLightbox('tulips.jpg', 'Hand-Painted Decorative Terracotta Platter', '<span style=&quot;font-size:0.9em&quot;>Dec 1, 2024</span>')">
+      <p class="image-caption">Crochet Strawberry</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/Dino.jpg" alt="Dino" class="art-image" onclick="openLightbox('Dino.jpg', 'Crochet Dinosaur', '<span style=&quot;font-size:0.9em&quot;>Aug 11, 2024</span>')">
+      <p class="image-caption">Crochet Dinosaur</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/octopus.jpg" alt="Octopus" class="art-image" onclick="openLightbox('octopus.jpg', 'Crochet Octopus','<span style=&quot;font-size:0.9em&quot;>July 16, 2024</span>')">
+      <p class="image-caption">Crochet Octopus</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/au.jpg" alt="au" class="art-image" onclick="openLightbox('au.jpg', 'Among Us','Among us character with a pink flower accessory<br><span style=&quot;font-size:0.9em&quot;>July 16, 2024</span>')">
+      <p class="image-caption">Among Us</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/crochet/bag.jpg" alt="Bag" class="art-image" onclick="openLightbox('bag.jpg', 'Crochet Bag','Polaroid bag<br><span style=&quot;font-size:0.9em&quot;>Aug 22, 2023</span>')">
+      <p class="image-caption">Crochet Bag</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 30px; text-align: center;">
+    <a href="index.html" class="category-button">&larr; Back to Home</a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+    <button class="close-btn" onclick="closeLightbox()">Close</button>
+  </div>
+
+  <script>
+    function openLightbox(image, title, description) {
+      document.getElementById('lightbox-img').src = `static/images/crochet/${image}`;
+      document.getElementById('lightbox-caption').innerHTML = `<strong>${title}</strong><br>${description}`;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
