@@ -64,28 +64,28 @@
 
   <div class="gallery">
     <div class="image-item">
-      <img src="static/images/crochet/au.jpg" alt="au" class="art-image" onclick="openLightbox('au.jpg', 'Among us<br>Among us character with a pink flower accessory<br> July 16, 2024')">
+      <img src="static/images/crochet/au.jpg" alt="au" class="art-image" onclick="openLightbox('au.jpg', 'Among us','Among us character with a pink flower accessory<br> July 16, 2024')">
       <p class="image-caption">Among Us</p>
     </div>
     <div class="image-item">
-      <img src="static/images/crochet/bag.jpg" alt="Bag" class="art-image" onclick="openLightbox('bag.jpg', 'Crochet Bag<br>Polaroid bag<br>Aug 22, 2023')">
+      <img src="static/images/crochet/bag.jpg" alt="Bag" class="art-image" onclick="openLightbox('bag.jpg', 'Crochet Bag','Polaroid bag<br>Aug 22, 2023')">
       <p class="image-caption">Crochet Bag</p>
     </div>
     <div class="image-item">
-      <img src="static/images/crochet/Dino.jpg" alt="Dino" class="art-image" onclick="openLightbox('Dino.jpg', 'Crochet Dinosaur<br> Aug 11, 2024')">
+      <img src="static/images/crochet/Dino.jpg" alt="Dino" class="art-image" onclick="openLightbox('Dino.jpg', 'Crochet Dinosaur', 'Aug 11, 2024')">
       <p class="image-caption">Crochet Dinosaur</p>
     </div>
     <div class="image-item">
-      <img src="static/images/crochet/dog_hat.jpg" alt="Dog in Hat" class="art-image" onclick="openLightbox('dog_hat.jpg', 'Dog Hat <br> Jan 18, 2025')">
+      <img src="static/images/crochet/dog_hat.jpg" alt="Dog in Hat" class="art-image" onclick="openLightbox('dog_hat.jpg', 'Dog Hat','Jan 18, 2025')">
       <p class="image-caption">Dog Hat</p>
     </div>
     <div class="image-item">
-      <img src="static/images/crochet/octopus.jpg" alt="Octopus" class="art-image" onclick="openLightbox('octopus.jpg', 'Crochet Octopus<br>July 16, 2024')">
+      <img src="static/images/crochet/octopus.jpg" alt="Octopus" class="art-image" onclick="openLightbox('octopus.jpg', 'Crochet Octopus','July 16, 2024')">
       <p class="image-caption">Crochet Octopus</p>
     </div>
     <div class="image-item">
-      <img src="static/images/crochet/sunflower.jpg" alt="Sunflower" class="art-image" onclick="openLightbox('sunflower.jpg', 'Sunflower Decoration<br> Jan 9, 2025')">
-      <p class="image-caption">Sunflower Decoration</p>
+      <img src="static/images/crochet/sunflower.jpg" alt="Sunflower" class="art-image" onclick="openLightbox('sunflower.jpg', 'Sunflower','Jan 9, 2025')">
+      <p class="image-caption">Sunflower</p>
     </div>
   </div>
 
@@ -101,15 +101,20 @@
   </div>
 
   <script>
-    function openLightbox(image, caption) {
+    function openLightbox(image, title, date) {
       document.getElementById('lightbox-img').src = `static/images/crochet/${image}`;
-      document.getElementById('lightbox-caption').innerHTML = `<strong>${caption}</strong>`;
+      document.getElementById('lightbox-caption').innerHTML = `
+        <strong>${title}</strong><br>
+        <span style="font-size: 0.9em;">${date}</span>
+      `;
       document.getElementById('lightbox').style.display = 'flex';
     }
-
+  
     function closeLightbox() {
       document.getElementById('lightbox').style.display = 'none';
     }
   </script>
+  
+  
 </body>
 </html>
