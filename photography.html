@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/style.css">
+  <style>
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .lightbox img {
+      max-width: 80%;
+      max-height: 70vh;
+      border-radius: 10px;
+    }
+    .lightbox p {
+      color: white;
+      margin-top: 20px;
+      font-size: 1.1em;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .lightbox .close-btn {
+      margin-top: 20px;
+      background: #fff;
+      color: #4a026e;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .image-item {
+      text-align: center;
+    }
+    .image-caption {
+      margin-top: 8px;
+      color: #e3d1f3;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Moments in Focus</h1>
+
+  <div class="gallery">
+    <div class="image-item">
+        <img src="static/images/photography/sun-flower.jpg" alt="sun-flower" class="art-image" onclick="openLightbox('sun-flower.jpg', 'Sunset Bloom')">
+        <p class="image-caption">Sunset Bloom</p>
+    </div>      
+    <div class="image-item">
+        <img src="static/images/photography/farahbeach.jpg" alt="farahbeach" class="art-image" onclick="openLightbox('farahbeach.jpg', 'Sea Gazing')">
+        <p class="image-caption">Sea Gazing</p>
+    </div>
+    <div class="image-item">
+        <img src="static/images/photography/humming.jpg" alt="humming" class="art-image" onclick="openLightbox('humming.jpg', 'Wings in Motion')">
+        <p class="image-caption">Wings in Motion</p>
+    </div>
+    <div class="image-item">
+        <img src="static/images/photography/andamansun.jpg" alt="andamansun" class="art-image" onclick="openLightbox('andamansun.jpg', 'Mirror to the Sky')">
+        <p class="image-caption">Mirror to the Sky</p>
+    </div>
+    <div class="image-item">
+        <img src="static/images/photography/pelican.jpg" alt="pelican" class="art-image" onclick="openLightbox('pelican.jpg', 'Wings of Grace')">
+        <p class="image-caption">Wings of Grace</p>
+    </div>
+    <div class="image-item">
+        <img src="static/images/photography/ys1.JPG" alt="ys1" class="art-image" onclick="openLightbox('ys1.jpg', 'Nature in Motion')">
+        <p class="image-caption">Nature in Motion</p>
+    </div>
+    <div class="image-item">
+        <img src="static/images/photography/turtle.jpg" alt="turtle" class="art-image" onclick="openLightbox('turtle.jpg', 'Tiny Explorer')">
+        <p class="image-caption">Tiny Explorer</p>
+    </div>
+    <div class="image-item">
+        <img src="static/images/photography/farahstone.jpg" alt="farahstone" class="art-image" onclick="openLightbox('farahstone.jpg', 'Paws in the Sand')">
+        <p class="image-caption">Paws in the Sand</p>
+    </div>
+    <div class="image-item">
+        <img src="static/images/photography/ysgansr.jpg" alt="ysgansr" class="art-image" onclick="openLightbox('ysgansr.jpg', 'Into the Pines')">
+        <p class="image-caption">Into the Pines</p>
+    </div>
+    <div class="image-item">
+        <img src="static/images/photography/squirrel.jpg" alt="ysgansr" class="art-image" onclick="openLightbox('squirrel.jpg', 'You talking to me?')">
+        <p class="image-caption">You talking to me?</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 30px; text-align: center;">
+    <a href="index.html" class="category-button">&larr; Back to Home</a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+    <button class="close-btn" onclick="closeLightbox()">Close</button>
+  </div>
+
+  <script>
+    function openLightbox(image, title, description = "") {
+      document.getElementById('lightbox-img').src = `static/images/photography/${image}`;
+      
+      let captionHTML = `<strong>${title}</strong>`;
+      if (description.trim() !== "") {
+        captionHTML += `<br><span style="font-size: 0.9em;">${description}</span>`;
+      }
+      
+      document.getElementById('lightbox-caption').innerHTML = captionHTML;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+  
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+  
+</body>
+</html>
