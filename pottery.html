@@ -90,12 +90,8 @@
       <p class="image-caption">Duck Bowl/p>
     </div>
     <div class="image-item">
-      <img src="static/images/crochet/au.jpg" alt="au" class="art-image" onclick="openLightbox('au.jpg', 'Among Us','Among us character with a pink flower accessory<br><span style=&quot;font-size:0.9em&quot;>July 16, 2024</span>')">
+      <img src="static/images/pottery/mini_flower_vase.jpg" alt="mini_flower_vase" class="art-image" onclick="openLightbox('mini_flower_vase.jpg', 'Mini FLower Vase','<span style=&quot;font-size:0.9em&quot;>Made on the wheel. <br> Handles attached later. </span>')">
       <p class="image-caption">Among Us</p>
-    </div>
-    <div class="image-item">
-      <img src="static/images/crochet/bag.jpg" alt="Bag" class="art-image" onclick="openLightbox('bag.jpg', 'Crochet Bag','Polaroid bag<br><span style=&quot;font-size:0.9em&quot;>Aug 22, 2023</span>')">
-      <p class="image-caption">Crochet Bag</p>
     </div>
   </div>
 
@@ -112,7 +108,7 @@
 
   <script>
     function openLightbox(image, title, description) {
-      document.getElementById('lightbox-img').src = `static/images/crochet/${image}`;
+      document.getElementById('lightbox-img').src = `static/images/pottery/${image}`;
       document.getElementById('lightbox-caption').innerHTML = `<strong>${title}</strong><br>${description}`;
       document.getElementById('lightbox').style.display = 'flex';
     }
