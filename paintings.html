@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Paintings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/style.css">
+  <style>
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .lightbox img {
+      max-width: 80%;
+      max-height: 70vh;
+      border-radius: 10px;
+    }
+    .lightbox p {
+      color: white;
+      margin-top: 20px;
+      font-size: 1.1em;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .lightbox .close-btn {
+      margin-top: 20px;
+      background: #fff;
+      color: #4a026e;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .image-item {
+      text-align: center;
+    }
+    .image-caption {
+      margin-top: 8px;
+      color: #e3d1f3;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>My Paintings</h1>
+
+  <div class="gallery">
+    <div class="image-item">
+      <img src="static/images/paintings/fall_winter.jpg" alt="fall_winter" class="art-image" onclick="openLightbox('fall_winter.jpg', 'A Tale of Two Seasons','<span style=&quot;font-size:0.9em&quot;>Gift given to grandparents!</span>')">
+      <p class="image-caption">A Tale of Two Seasons</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/paintings/butterfly.jpg" alt="butterfly" class="art-image" onclick="openLightbox('butterfly.jpg', 'Crimson Flight','<span style=&quot;font-size:0.9em&quot;>Room Decor</span>')">
+      <p class="image-caption">Crimson Flight</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/paintings/pbn.jpg" alt="pbn" class="art-image" onclick="openLightbox('pbn.jpg', 'Paint by Number','<span style=&quot;font-size:0.9em&quot;>My first Paint by Number/span>')">
+      <p class="image-caption">Paint by Number</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/paintings/sunset.jpg" alt="sunset" class="art-image" onclick="openLightbox('sunset.jpg', 'Tangerine Skies', '<span style=&quot;font-size:0.9em&quot;>Gift for my grandmom :)</span>')">
+      <p class="image-caption">Crochet Strawberry</p>
+    </div>
+    <div class="image-item">
+      <img src="static/images/paintings/moon.jpg" alt="moon" class="art-image" onclick="openLightbox('moon.jpg', 'Moonlit Journey', '<span style=&quot;font-size:0.9em&quot;>Room Decor</span>')">
+      <p class="image-caption">Moonlit Journey</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 30px; text-align: center;">
+    <a href="index.html" class="category-button">&larr; Back to Home</a>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+    <button class="close-btn" onclick="closeLightbox()">Close</button>
+  </div>
+
+  <script>
+    function openLightbox(image, title, description) {
+      document.getElementById('lightbox-img').src = `static/images/paintings/${image}`;
+      document.getElementById('lightbox-caption').innerHTML = `<strong>${title}</strong><br>${description}`;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
