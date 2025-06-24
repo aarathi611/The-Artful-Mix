@@ -1,122 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sketches</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/style.css">
-    <style>
+  <meta charset="UTF-8">
+  <title>Skecthes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/style.css">
+  <style>
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .lightbox img {
+      max-width: 80%;
+      max-height: 70vh;
+      border-radius: 10px;
+    }
+    .lightbox p {
+      color: white;
+      margin-top: 20px;
+      font-size: 1.1em;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .lightbox .close-btn {
+      margin-top: 20px;
+      background: #fff;
+      color: #4a026e;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .image-item {
+      text-align: center;
+    }
+    .image-caption {
+      margin-top: 8px;
+      color: #e3d1f3;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
       .gallery {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
+        grid-template-columns: 1fr !important;
       }
-
-      .image-item {
-        text-align: center;
-        max-width: 400px;
-      }
-
-      .image-caption {
-        margin-top: 10px;
-        font-weight: bold;
-        color: #e3d1f3;
-      }
-
-      /* Modal styling */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.8);
-      }
-
-      .modal-content {
-        background-color: #fff;
-        margin: 10% auto;
-        padding: 20px;
-        border-radius: 12px;
-        width: 90%;
-        max-width: 600px;
-        text-align: center;
-      }
-
-      .modal-content img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 10px;
-      }
-
-      .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      .close:hover {
-        color: black;
-      }
-
-      .modal-caption {
-        margin-top: 12px;
-        font-size: 1em;
-        color:#4a026e;
-      }
-    </style>
+    }
+  </style>
 </head>
 <body>
-    <h1>My Sketches</h1>
+  <h1>Sketches</h1>
 
-    <div class="gallery">
-        <div class="image-item">
-          <img src="static/images/sketches/sketch1.jpg" alt="Sketch 1" class="art-image" onclick="openModal('static/images/sketches/sketch1.jpg', 'Portrait Practice')">
-          <p class="image-caption">Portrait Practice</p>
-        </div>
-        <div class="image-item">
-          <img src="static/images/sketches/sketch2.jpg" alt="Sketch 2" class="art-image" onclick="openModal('static/images/sketches/sketch2.jpg', 'Still Life with Charcoal')">
-          <p class="image-caption">Still Life with Charcoal</p>
-        </div>
+  <div class="gallery">
+    <div class="image-item">
+      <img src="static/images/sketches/heart.jpg" alt="heart" class="art-image" onclick="openLightbox('heart.jpg', 'Handmade Love','<span style=&quot;font-size:0.9em&quot;>May 6, 2019</span>')">
+      <p class="image-caption">Handmade Love</p>
     </div>
+  </div>
 
-    <div class="modal" id="imageModal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img id="modalImage" src="" alt="Enlarged Sketch">
-        <p class="modal-caption" id="modalCaption"></p>
-      </div>
-    </div>
+  <div style="margin-top: 30px; text-align: center;">
+    <a href="index.html" class="category-button">&larr; Back to Home</a>
+  </div>
 
-    <div style="margin-top: 30px; text-align: center;">
-        <a href="index.html" class="category-button">← Back to Home</a>
-    </div>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+    <p id="lightbox-caption"></p>
+    <button class="close-btn" onclick="closeLightbox()">Close</button>
+  </div>
 
-    <script>
-      function openModal(imageSrc, caption) {
-        document.getElementById('imageModal').style.display = "block";
-        document.getElementById('modalImage').src = imageSrc;
-        document.getElementById('modalCaption').textContent = caption;
-      }
+  <script>
+    function openLightbox(image, title, description) {
+      document.getElementById('lightbox-img').src = `static/images/sketches/${image}`;
+      document.getElementById('lightbox-caption').innerHTML = `<strong>${title}</strong><br>${description}`;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
 
-      function closeModal() {
-        document.getElementById('imageModal').style.display = "none";
-      }
-
-      // Optional: Close modal on outside click
-      window.onclick = function(event) {
-        const modal = document.getElementById('imageModal');
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      }
-    </script>
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
