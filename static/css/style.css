@@ -55,8 +55,9 @@ h1 {
     margin: 40px 60px;
 }
 
-.header-text {
-    text-align: left;
+.welcome-text {
+    margin-left: 80px;  /* Adjust as needed */
+    max-width: 500px;
 }
 
 .profile-container {
