@@ -211,17 +211,15 @@ h1 {
   
   @media (max-width: 600px) {
     .top-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transform: none; /* disable left shift on mobile */
+        flex-direction: column; /* change from column-reverse to column */
+        align-items: center;
+        text-align: center;
+        transform: none;
     }
   
     .profile-container {
-      order: -1;
-      margin-bottom: 20px;
-      position: static;
+        order: -1; /* moves profile image above the text */
+        margin-bottom: 20px;
     }
   
     .profile-pic {
