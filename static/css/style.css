@@ -60,7 +60,13 @@ h1 {
     flex: 1;
     min-width: 300px;
     text-align: center;
-  }
+}
+
+.welcome-text p {
+    font-size: 1.4rem;
+    margin-top: 10px;
+}
+
 .profile-container {
     position: absolute;
     top: 20px;
