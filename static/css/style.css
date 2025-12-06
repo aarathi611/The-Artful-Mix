@@ -14,36 +14,31 @@ h1 {
     font-size: 2.5rem;
 }
 
-/* ---------- Top Section (Heading + Profile Pic) ---------- */
+/* ---------- Top Section (Centered Heading + Floating Profile Pic) ---------- */
 
 .top-section {
-    display: flex;
-    justify-content: center;     /* center the whole group */
-    align-items: center;         /* vertical alignment */
-    padding: 40px 80px;
-    position: relative;
+    position: relative;        /* allows floating image */
+    padding: 60px 80px 40px;   /* space around heading */
+    text-align: center;        /* center heading + subtext */
 }
 
-/* center text block exactly in the middle */
 .welcome-text {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 0 auto;            /* ensures perfect centering */
 }
 
-/* .welcome-text p {
+.welcome-text p {
     font-size: 1.4rem;
     margin-top: 10px;
-} */
-
-/* profile block on the right */
-.profile-container {
-    position: absolute;
-    right: 80px;                 /* adjust left-right distance */
-    top: 50%;                    /* center vertically */
-    transform: translateY(-50%); /* perfect vertical centering */
 }
 
+/* Profile picture floats on the right */
+.profile-container {
+    position: absolute;
+    right: 80px;               /* adjust horizontal position */
+    top: 50%;                  /* place vertically in middle */
+    transform: translateY(-50%);  /* perfect vertical centering */
+}
 
 .profile-pic {
     width: 200px;
@@ -54,7 +49,7 @@ h1 {
     object-position: center 30%;
 }
 
-/* ---------- Intro Text (if used elsewhere) ---------- */
+/* ---------- Intro Text ---------- */
 
 .intro-message {
     max-width: 800px;
@@ -70,7 +65,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 80px 100px; /* row and column gap */
+    gap: 80px 100px;
     margin: 40px auto;
     max-width: 1000px;
 }
@@ -93,7 +88,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* ---------- Floating Links (e.g., About Me button) ---------- */
+/* ---------- Floating Links ---------- */
 
 .floating-links {
     position: fixed;
@@ -137,7 +132,7 @@ h1 {
 .art-image {
     width: 100%;
     height: auto;
-    max-width: 400px;  /* limits how wide it can get */
+    max-width: 400px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     object-fit: cover;
@@ -156,29 +151,21 @@ h1 {
     text-align: center;
 }
 
-/* ---------- Responsive Adjustments ---------- */
+/* ---------- Responsive (Mobile) ---------- */
 
-/* Tablets / small laptops */
-@media (max-width: 1024px) {
-    .category-links {
-        gap: 60px 60px;
-    }
-}
-
-/* Phones */
 @media (max-width: 600px) {
 
     .top-section {
-        flex-direction: column;   /* stack profile + text */
-        align-items: center;
+        padding: 40px 20px;
         text-align: center;
-        padding: 30px 20px;
     }
 
+    /* Move profile pic above the heading on phones */
     .profile-container {
-        order: -1;               /* move profile above the text */
-        margin-left: 0;
-        margin-bottom: 20px;
+        position: static;
+        transform: none;
+        margin: 0 auto 20px;
+        display: flex;
         justify-content: center;
     }
 
@@ -202,13 +189,8 @@ h1 {
 
     .category-button {
         width: 80%;
-        height: auto;
         padding: 20px;
         font-size: 1em;
-    }
-
-    h1, h2 {
-        padding: 0 20px;
     }
 
     .floating-links a {
