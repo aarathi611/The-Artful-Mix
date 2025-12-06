@@ -18,17 +18,17 @@ h1 {
 
 .top-section {
     display: flex;
-    justify-content: space-between;  /* text on left, image on right */
-    align-items: center;             /* vertical centering */
+    justify-content: center;     /* center the whole group */
+    align-items: center;         /* vertical alignment */
     padding: 40px 80px;
-    flex-wrap: wrap;
-    gap: 40px;                       /* space between text and image */
+    position: relative;
 }
 
+/* center text block exactly in the middle */
 .welcome-text {
-    flex: 1;
-    min-width: 300px;
     text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .welcome-text p {
@@ -38,11 +38,12 @@ h1 {
 
 /* profile block on the right */
 .profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 40px;
+    position: absolute;
+    right: 80px;                 /* adjust left-right distance */
+    top: 50%;                    /* center vertically */
+    transform: translateY(-50%); /* perfect vertical centering */
 }
+
 
 .profile-pic {
     width: 200px;
