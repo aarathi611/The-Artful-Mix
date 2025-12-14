@@ -11,7 +11,10 @@ body {
 h1 {
     text-align: center;
     margin-top: 40px;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    font-family: 'Dancing Script', cursive;
+    color: #e3d1f3;  /* soft lavender to match your purple theme */
+    letter-spacing: 1px;
 }
 
 /* ---------- Top Section (Centered Heading + Floating Profile Pic) ---------- */
