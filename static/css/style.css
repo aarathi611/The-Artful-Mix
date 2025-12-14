@@ -53,6 +53,16 @@ h1 {
 }
 
 /* ---------- Intro Text ---------- */
+.intro-line {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #f3e7ff; /* soft lavender */
+    text-align: center;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
 
 .intro-message {
     max-width: 800px;
