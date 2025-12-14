@@ -216,3 +216,13 @@ h1 {
         align-items: center;
     }
 }
+
+/*about me*/
+
+.about-wrapper {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1.15rem;
+    color: #f3e7ff;
+    line-height: 1.8;
+}
