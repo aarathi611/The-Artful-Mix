@@ -4,8 +4,21 @@
   <meta charset="UTF-8">
   <title>Pottery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- MAIN SITE CSS -->
   <link rel="stylesheet" href="static/css/style.css">
+
   <style>
+    /* Page default font */
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+
     .lightbox {
       display: none;
       position: fixed;
@@ -19,11 +32,14 @@
       align-items: center;
       flex-direction: column;
     }
+
     .lightbox img {
       max-width: 80%;
       max-height: 70vh;
       border-radius: 10px;
     }
+
+    /* Lightbox text inherits Poppins from style.css */
     .lightbox p {
       color: white;
       margin-top: 20px;
@@ -31,6 +47,7 @@
       text-align: center;
       padding: 0 20px;
     }
+
     .lightbox .close-btn {
       margin-top: 20px;
       background: #fff;
@@ -41,6 +58,7 @@
       cursor: pointer;
       border: none;
     }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -49,9 +67,12 @@
       max-width: 900px;
       margin: auto;
     }
+
     .image-item {
       text-align: center;
     }
+
+    /* Caption inherits Poppins from global CSS */
     .image-caption {
       margin-top: 8px;
       color: #e3d1f3;
@@ -65,54 +86,89 @@
     }
   </style>
 </head>
+
 <body>
   <h1>Handcrafted Ceramics</h1>
 
   <div class="gallery">
+
     <div class="image-item">
-      <img src="static/images/pottery/elephant.jpg" alt="Elephant" class="art-image" onclick="openLightbox('elephant.jpg', 'Elephant Side Table','<span style=&quot;font-size:0.9em&quot;>This entirely hand-built piece features an elephant design created using the Cuerda Seca (black wax resist) technique - <br> where resist outlines were applied by hand. <br> I used a needle bottle to fill each section with glaze, like coloring in a detailed design. <br>  It is one of my longest and most intricate projects. </span>')">
+      <img src="static/images/pottery/elephant.jpg" alt="Elephant" class="art-image"
+           onclick="openLightbox('elephant.jpg', 'Elephant Side Table',
+           'This hand-built piece features Cuerda Seca black-wax resist outlines. Each color section was filled using a needle bottle — one of my most detailed and time-intensive works.')">
       <p class="image-caption">Elephant Table</p>
     </div>
+
     <div class="image-item">
-      <img src="static/images/pottery/flower.jpg" alt="Flower" class="art-image" onclick="openLightbox('flower.jpg', 'Japanese Flower Vase (Ikebana)','<span style=&quot;font-size:0.9em&quot;>Ikebana is the art of beautifully arranging cut stems, leaves, and flowers in vases and other containers <br> that evolved in Japan over seven centuries.</span>')">
+      <img src="static/images/pottery/flower.jpg" alt="Flower Vase" class="art-image"
+           onclick="openLightbox('flower.jpg', 'Japanese Flower Vase (Ikebana)',
+           'Inspired by Ikebana — the 700-year-old Japanese art of arranging stems, leaves, and flowers with intention and balance.')">
       <p class="image-caption">Ikebana Flower Vase</p>
     </div>
+
     <div class="image-item">
-      <img src="static/images/pottery/tulips.jpg" alt="tulips" class="art-image" onclick="openLightbox('tulips.jpg', 'Hand-Painted Decorative Terracotta Platter', '<span style=&quot;font-size:0.9em&quot;>Crafted from terracotta, this platter features hand-painted tulips. <br> A nod to my love for the flower and a desire for a clean, minimalist design.</span>')">
+      <img src="static/images/pottery/tulips.jpg" alt="Tulip Platter" class="art-image"
+           onclick="openLightbox('tulips.jpg', 'Hand-Painted Decorative Terracotta Platter',
+           'Crafted from terracotta and decorated with hand-painted tulips — clean, minimalist, and inspired by my favorite flower.')">
       <p class="image-caption">Hand-Painted Decorative Terracotta Platter</p>
     </div>
+
     <div class="image-item">
-      <img src="static/images/pottery/corn.jpg" alt="Corn" class="art-image" onclick="openLightbox('Corn.jpg', 'Corn Cup', '<span style=&quot;font-size:0.9em&quot;>Decorative cup made on the wheel <br> Carved the details and added the leaves after it dried a little bit.</span>')">
+      <img src="static/images/pottery/Corn.jpg" alt="Corn Cup" class="art-image"
+           onclick="openLightbox('Corn.jpg', 'Corn Cup',
+           'Thrown on the wheel, carved while leather-hard, and finished with added leaves for texture and charm.')">
       <p class="image-caption">Corn Cup</p>
     </div>
+
     <div class="image-item">
-      <img src="static/images/pottery/duck.jpg" alt="duck" class="art-image" onclick="openLightbox('duck.jpg', 'Duck Bowl','<span style=&quot;font-size:0.9em&quot;>Hand-built bowl <br> Added a duck in the center to evoke the look of a cracked egg hatching.</span>')">
+      <img src="static/images/pottery/duck.jpg" alt="Duck Bowl" class="art-image"
+           onclick="openLightbox('duck.jpg', 'Duck Bowl',
+           'Hand-built bowl with a duck sculpted at the center — designed to look like a hatching egg.')">
       <p class="image-caption">Duck Bowl</p>
     </div>
+
     <div class="image-item">
-      <img src="static/images/pottery/mini_flower_vase.jpg" alt="mini_flower_vase" class="art-image" onclick="openLightbox('mini_flower_vase.jpg', 'Mini Flower Vase','<span style=&quot;font-size:0.9em&quot;>Made on the wheel. <br> Handles attached later. </span>')">
+      <img src="static/images/pottery/mini_flower_vase.jpg" alt="Mini Flower Vase" class="art-image"
+           onclick="openLightbox('mini_flower_vase.jpg', 'Mini Flower Vase',
+           'Thrown on the wheel, with hand-attached handles added after shaping.')">
       <p class="image-caption">Mini Flower Vase</p>
     </div>
+
     <div class="image-item">
-        <img src="static/images/pottery/cup.jpg" alt="cup" class="art-image" onclick="openLightbox('cup.jpg', 'Wavy Ridge Cup','<span style=&quot;font-size:0.9em&quot;>Made on the wheel.</span>')">
-        <p class="image-caption">Wavy Ridge Cup</p>
-      </div>
-      <div class="image-item">
-        <img src="static/images/pottery/pitcher.jpg" alt="pitcher" class="art-image" onclick="openLightbox('pitcher.jpg', 'Mini Pitcher','<span style=&quot;font-size:0.9em&quot;>Made on the wheel. </span>')">
-        <p class="image-caption">Mini Pitcher</p>
-      </div>
-      <div class="image-item">
-        <img src="static/images/pottery/raku_flower.jpg" alt="raku_flower" class="art-image" onclick="openLightbox('raku_flower.jpg', 'Petal Pot','<span style=&quot;font-size:0.9em&quot;>Created using the Raku firing method. <br> This produces unique colors based on heat exposure. <br> This is a pinch pot with a hand-sculpted flower delicately attached on top. </span>')">
-        <p class="image-caption">Petal Pot</p>
-      </div>
-      <div class="image-item">
-        <img src="static/images/pottery/raku_heart.jpg" alt="raku_heart" class="art-image" onclick="openLightbox('raku_heart.jpg', 'Mini Vessel','<span style=&quot;font-size:0.9em&quot;>Created using the Raku firing method. <br> This produces unique colors based on heat exposure. <br> This is a pinch pot with a heart and handles attached. </span>')">
-        <p class="image-caption">Mini Vessel</p>
-      </div>
-      <div class="image-item">
-        <img src="static/images/pottery/raku_star.jpg" alt="raku_star" class="art-image" onclick="openLightbox('raku_star.jpg', 'Starlit Rim','<span style=&quot;font-size:0.9em&quot;>Created using the Raku firing method. <br> This produces unique colors based on heat exposure. <br> This is a pinch pot shaped like a star. </span>')">
-        <p class="image-caption">Starlit Rim</p>
-      </div>
+      <img src="static/images/pottery/cup.jpg" alt="Wavy Ridge Cup" class="art-image"
+           onclick="openLightbox('cup.jpg', 'Wavy Ridge Cup',
+           'Thrown on the wheel — simple, functional, and softly textured.')">
+      <p class="image-caption">Wavy Ridge Cup</p>
+    </div>
+
+    <div class="image-item">
+      <img src="static/images/pottery/pitcher.jpg" alt="Pitcher" class="art-image"
+           onclick="openLightbox('pitcher.jpg', 'Mini Pitcher',
+           'A compact wheel-thrown pitcher with a refined form and balanced handle.')">
+      <p class="image-caption">Mini Pitcher</p>
+    </div>
+
+    <div class="image-item">
+      <img src="static/images/pottery/raku_flower.jpg" alt="Raku Flower Pot" class="art-image"
+           onclick="openLightbox('raku_flower.jpg', 'Petal Pot',
+           'Created using the Raku firing method, which produces unique colors based on rapid heat changes. Features a hand-sculpted flower.')">
+      <p class="image-caption">Petal Pot</p>
+    </div>
+
+    <div class="image-item">
+      <img src="static/images/pottery/raku_heart.jpg" alt="Raku Heart Vessel" class="art-image"
+           onclick="openLightbox('raku_heart.jpg', 'Mini Vessel',
+           'A Raku-fired pinch pot featuring a sculpted heart and delicate handles. Each firing creates one-of-a-kind color patterns.')">
+      <p class="image-caption">Mini Vessel</p>
+    </div>
+
+    <div class="image-item">
+      <img src="static/images/pottery/raku_star.jpg" alt="Raku Star Pot" class="art-image"
+           onclick="openLightbox('raku_star.jpg', 'Starlit Rim',
+           'A star-shaped Raku-fired pinch pot — vibrant, unpredictable, and shaped entirely by hand.')">
+      <p class="image-caption">Starlit Rim</p>
+    </div>
+
   </div>
 
   <div style="margin-top: 10px; margin-bottom: 40px; text-align: center;">
@@ -129,7 +185,8 @@
   <script>
     function openLightbox(image, title, description) {
       document.getElementById('lightbox-img').src = `static/images/pottery/${image}`;
-      document.getElementById('lightbox-caption').innerHTML = `<strong>${title}</strong><br>${description}`;
+      document.getElementById('lightbox-caption').innerHTML = 
+        `<strong>${title}</strong><br><span style="font-size:0.9em;">${description}</span>`;
       document.getElementById('lightbox').style.display = 'flex';
     }
 
@@ -137,5 +194,6 @@
       document.getElementById('lightbox').style.display = 'none';
     }
   </script>
+
 </body>
 </html>
