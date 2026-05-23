@@ -249,17 +249,18 @@ h1 {
     letter-spacing: 0.5px;
 }
 
-.pottery-page{
-    background-image:url("../images/pottery_desktop.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    min-height:100vh;
-    color:white;
+body.pottery-page{
+    background-image: url("../images/pottery_desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: white;
 }
 
 @media (max-width:768px){
-    .pottery-page{
-        background-image:url("../images/pottery_phone.jpg");
+    body.pottery-page{
+        background-image: url("../images/pottery_phone.jpg");
     }
 }
