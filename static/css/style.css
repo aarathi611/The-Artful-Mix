@@ -254,26 +254,26 @@ body.pottery-page{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
+    margin: 0;
     color: white;
 }
 
 @media (max-width:900px){
     body.pottery-page{
-        background-image: url("../images/pottery_phone.jpg?v=2");
-        background-attachment: scroll;
-        background-position: center;
+        background-image: url("../images/pottery_phone.jpg?v=3");
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
     }
 }
 
-/* POTTERY PAGE HEADING */
-
 body.pottery-page h1{
-    color:#f3dfff !important;
+    color:#eed2ff !important;
     text-shadow:2px 2px 8px rgba(0,0,0,.35);
 }
-
-/* POTTERY PAGE CAPTIONS */
 
 body.pottery-page .image-caption{
     color:#fff3e6 !important;
