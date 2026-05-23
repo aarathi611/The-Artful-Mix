@@ -264,13 +264,3 @@ body.pottery-page{
         background-image: url("../images/pottery_phone.jpg");
     }
 }
-
-body.pottery-page h1{
-    color:#eed2ff !important;
-    text-shadow:2px 2px 8px rgba(0,0,0,.35);
-}
-
-body.pottery-page .image-caption{
-    color:#fff3e6 !important;
-    text-shadow:2px 2px 8px rgba(0,0,0,.35);
-}
