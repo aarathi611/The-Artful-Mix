@@ -295,11 +295,11 @@ body.crochet-page{
 }
 
 body.crochet-page h1{
-    color: #ffe6f2;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.35);
+    color: #6f3a8a;
+    text-shadow: 2px 2px 6px rgba(255,255,255,0.75);
 }
 
 body.crochet-page .image-caption{
-    color: #fff7f5;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.35);
+    color: #5a2a6f;
+    text-shadow: 2px 2px 6px rgba(255,255,255,0.8);
 }
