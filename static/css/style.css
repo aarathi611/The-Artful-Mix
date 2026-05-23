@@ -275,3 +275,31 @@ body.pottery-page .image-caption {
     text-shadow: 2px 2px 8px rgba(0,0,0,0.35);
     font-weight: bold;
 }
+
+/* CROCHET PAGE */
+
+body.crochet-page{
+    background-image: url("../images/crochet_desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: white;
+}
+
+@media (max-width:768px){
+    body.crochet-page{
+        background-image: url("../images/crochet_phone.jpg");
+    }
+}
+
+body.crochet-page h1{
+    color: #ffe6f2;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.35);
+}
+
+body.crochet-page .image-caption{
+    color: #fff7f5;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.35);
+}
