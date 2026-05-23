@@ -264,3 +264,15 @@ body.pottery-page{
         background-image: url("../images/pottery_phone.jpg");
     }
 }
+
+/* pottery pahe heading */
+.pottery-page h1{
+    color:#f3dfff; /* soft lavender */
+    text-shadow:2px 2px 8px rgba(0,0,0,.35);
+}
+
+/* POTTERY PAGE CAPTIONS */
+.pottery-page .image-caption{
+    color:#fff3e6; /* warm cream */
+    text-shadow:2px 2px 8px rgba(0,0,0,.35);
+}
