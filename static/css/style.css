@@ -303,3 +303,32 @@ body.crochet-page .image-caption{
     color: #5a2a6f;
     text-shadow: 2px 2px 6px rgba(255,255,255,0.8);
 }
+
+/* PAINTINGS PAGE */
+
+body.paintings-page{
+    background-image: url("../images/paintings_desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: white;
+}
+
+@media (max-width:768px){
+    body.paintings-page{
+        background-image: url("../images/paintings_phone.jpg");
+    }
+}
+
+body.paintings-page h1{
+    color: #fff2cc;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+body.paintings-page .image-caption{
+    color: #fff8e8;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    font-weight: bold;
+}
