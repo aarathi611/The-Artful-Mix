@@ -256,17 +256,12 @@ body.pottery-page{
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-    margin: 0;
     color: white;
 }
 
-@media (max-width:900px){
+@media (max-width:768px){
     body.pottery-page{
-        background-image: url("../images/pottery_phone.jpg?v=3");
-        background-size: cover;
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-image: url("../images/pottery_phone.jpg");
     }
 }
 
